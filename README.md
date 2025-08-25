@@ -1,2 +1,4 @@
-# quera_port
-Quera Front-end challenge 291597
+<div align="center">
+    <h1>291597 - Port challenge</h1>
+    <img src="https://quera.org/static/images/logo/logo-quera-heavy.3-1c1287ee3575.svg"  width="400"/>
+</div>
