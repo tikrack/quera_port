@@ -20,7 +20,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
           elm_save_buttons.forEach(function(item) {
             item.addEventListener("click", function() {
-              item.previousElementSibling.previousElementSibling.previousElementSibling.innerText = item.previousElementSibling.value
+              if (item.previousElementSibling.value.trim() !== "") {
+                item.previousElementSibling.previousElementSibling.previousElementSibling.innerText = item.previousElementSibling.value
+              }
               item.previousElementSibling.previousElementSibling.previousElementSibling.style.display = "inline"
               item.previousElementSibling.remove()
               item.remove()
