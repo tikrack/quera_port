@@ -6,6 +6,10 @@ document.addEventListener("DOMContentLoaded", function() {
       let edit_btn = item.children[1]
 
       edit_btn.addEventListener("click", function(e) {
+        if (port.style.display === "none") {
+          return
+        }
+
         port.style.display = "none"
         item.insertAdjacentHTML("beforeend", `
           <input type="number" class="edit-input" value="${port.innerText}"/>
@@ -16,7 +20,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
           elm_save_buttons.forEach(function(item) {
             item.addEventListener("click", function() {
-              item.previousElementSibling.previousElementSibling.previousElementSibling.innerText = item.previousElementSibling.value
+              if (item.previousElementSibling.value.trim() !== "") {
+                item.previousElementSibling.previousElementSibling.previousElementSibling.innerText = item.previousElementSibling.value
+              }
               item.previousElementSibling.previousElementSibling.previousElementSibling.style.display = "inline"
               item.previousElementSibling.remove()
               item.remove()
